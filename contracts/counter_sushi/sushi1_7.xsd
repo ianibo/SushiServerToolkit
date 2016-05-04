@@ -14,7 +14,12 @@
 		10/20/2008|Oliver Pesch|Added header documentation
 		10/20/2008|Oliver Pesch|Documented various elements
 	-->
-<xs:schema xmlns:s="http://www.niso.org/schemas/sushi" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.niso.org/schemas/sushi" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.6">
+<xs:schema xmlns:s="http://www.niso.org/schemas/sushi" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="http://www.niso.org/schemas/sushi" 
+           elementFormDefault="qualified" 
+           attributeFormDefault="unqualified" 
+           version="1.6">
 	<xs:element name="ReportRequest" type="s:ReportRequest"/>
 	<xs:element name="ReportResponse" type="s:ReportResponse"/>
 	<xs:complexType name="ReportResponse">
