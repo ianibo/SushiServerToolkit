@@ -126,13 +126,19 @@ cxf:
         sushiServiceClient:
            wsdl: contracts/sushi/sushi1_7.wsdl
            wsdlArgs: -autoNameResolution
-           # clientInterface: com.k_int.sushiServerToolkit.sushi
-           serviceEndpointAddress: http://localhost:8080/services/sushi
+           # serviceEndpointAddress: http://localhost:8080/services/sushi
+           serviceEndpointAddress: /services/vanillaSushi
            namespace: com.k_int.sushiServerToolkit.vanilla
+           # clientInterface: com.k_int.sushiServerToolkit.vanilla.vanillaSushiPortType
+           clientInterface: VanillaSushiPortType
+           client: true
         counterSushiServiceClient:
            wsdl: contracts/counter_sushi/counter_sushi4_1.wsdl
            wsdlArgs: -autoNameResolution
-           # clientInterface: com.k_int.sushiServerToolkit.counterSushi
-           serviceEndpointAddress: http://localhost:8080/services/counterSushi
+           # serviceEndpointAddress: http://localhost:8080/services/counterSushi
+           serviceEndpointAddress: /services/counterSushi
            namespace: com.k_int.sushiServerToolkit.counter
            bindingFile: contracts/bindings.jxb
+           # clientInterface: com.k_int.sushiServerToolkit.counter.counterSushiPortType
+           clientInterface: CounterSushiPortType
+           client: true
