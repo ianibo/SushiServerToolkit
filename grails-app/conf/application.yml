@@ -120,3 +120,12 @@ grails:
 endpoints:
     jmx:
         unique-names: true
+
+cxf:
+    client:
+        simpleServiceClient:
+            wsdl: contracts/sushi/sushi1_7.wsdl
+            wsdlArgs: -autoNameResolution
+            clientInterface: cxf.client.demo.simple.SimpleServicePortType
+            serviceEndpointAddress: http://localhost:8080/services/simple
+            namespace: com.k_int.sushiServerToolkit

@@ -1,0 +1,20 @@
+Compiled with
+
+grails wsdl-to-java --wsdl="./contracts/sushi/sushi1_7.wsdl"
+
+
+Notes::
+
+usage: grails wsdl-to-java --wsdl=<path to wsdl>
+    [--package=<package>] [--fe=frontend-name] [--db=databinding-name]
+    [--wv=wsdl-version] [--sn=service-name] [--b=binding-name]
+    [--catalog=catalog-file-name] [--d output-directory] [--compile]
+    [--classdir=compile-class-dir] [--client] [--server]
+    [--impl] [--all] [--ant] [--autoNameResolution] [--exsh=(true/false)]
+    [--dns=(true/false)] [--dex=(true/false)] [--validate] [--keep] [--noAddressBinding]
+    [--exceptionSuper] [--reserveClass=classname] [--allowElementReferences<=true>]
+    [--asyncMethods=foo,bar,...] [--bareMethods=foo,bar,...]
+    [--mimeMethods=foo,bar,...] [--mark]
+
+Script Options:
+  -help, --help           Prints this help message
