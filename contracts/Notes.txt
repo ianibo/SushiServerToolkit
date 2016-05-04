@@ -1,6 +1,7 @@
 Compiled with
 
-grails wsdl-to-java --wsdl="./contracts/sushi/sushi1_7.wsdl"
+gradle wsdlToJava
+
 
 
 Notes::

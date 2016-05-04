@@ -123,9 +123,15 @@ endpoints:
 
 cxf:
     client:
-        simpleServiceClient:
-            wsdl: contracts/sushi/sushi1_7.wsdl
+        counterSushiServiceClient:
+            wsdl: contracts/counter_sushi/counter_sushi4_1.wsdl
             wsdlArgs: -autoNameResolution
             clientInterface: cxf.client.demo.simple.SimpleServicePortType
-            serviceEndpointAddress: http://localhost:8080/services/simple
-            namespace: com.k_int.sushiServerToolkit
+            serviceEndpointAddress: http://localhost:8080/services/counterSushi
+            namespace: com.k_int.sushiServerToolkit.CounterSushi4_1
+        # sushiServiceClient:
+        #    wsdl: contracts/sushi/sushi1_7.wsdl
+        #    wsdlArgs: -autoNameResolution
+        #    clientInterface: cxf.client.demo.simple.SimpleServicePortType
+        #    serviceEndpointAddress: http://localhost:8080/services/simple
+        #    namespace: com.k_int.sushiServerToolkit.Sushi1_7
