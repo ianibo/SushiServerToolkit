@@ -126,13 +126,13 @@ cxf:
         sushiServiceClient:
            wsdl: contracts/sushi/sushi1_7.wsdl
            wsdlArgs: -autoNameResolution
-           clientInterface: com.k_int.sushiServerToolkit.sushi
+           # clientInterface: com.k_int.sushiServerToolkit.sushi
            serviceEndpointAddress: http://localhost:8080/services/sushi
-           namespace: com.k_int.sushiServerToolkit
+           namespace: com.k_int.sushiServerToolkit.vanilla
         counterSushiServiceClient:
            wsdl: contracts/counter_sushi/counter_sushi4_1.wsdl
            wsdlArgs: -autoNameResolution
-           clientInterface: com.k_int.sushiServerToolkit.counterSushi
+           # clientInterface: com.k_int.sushiServerToolkit.counterSushi
            serviceEndpointAddress: http://localhost:8080/services/counterSushi
-           namespace: com.k_int.sushiServerToolkit
+           namespace: com.k_int.sushiServerToolkit.counter
            bindingFile: contracts/bindings.jxb
