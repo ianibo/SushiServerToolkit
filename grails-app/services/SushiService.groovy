@@ -27,6 +27,8 @@ class SushiService implements com.k_int.sushiServerToolkit.counter.SushiServiceI
 
       log.debug("counter::getReport");
 
+      log.debug("Requester is asking for ${messagePart.reportDefinition.name}")
+
       def datatypeFactory = DatatypeFactory.newInstance()
       def result = new CounterReportResponse();
       result.report = new Reports()

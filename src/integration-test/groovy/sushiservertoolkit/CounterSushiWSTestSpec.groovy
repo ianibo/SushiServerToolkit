@@ -49,16 +49,18 @@ class CounterSushiWSTestSpec extends GebSpec {
             _getReport_messagePart.requestor = new Requestor()
             _getReport_messagePart.requestor.id = "0001"
             _getReport_messagePart.requestor.name = "User 0001"
-            _getReport_messagePart.requestor.email = "user0001@some.domain.name"
+            _getReport_messagePart.requestor.email = "user0001@borcetshire.ac.uk"
             _getReport_messagePart.customerReference = new CustomerReference()
-            _getReport_messagePart.customerReference.id = "CRUser0001"
+            _getReport_messagePart.customerReference.id = "ArcherConsortium/UoBorcetshire"
             _getReport_messagePart.reportDefinition = new ReportDefinition()
             _getReport_messagePart.reportDefinition.filters = new ReportDefinition.Filters()
             _getReport_messagePart.reportDefinition.filters.usageDateRange = new Range()
-            _getReport_messagePart.reportDefinition.filters.usageDateRange.begin = datatypeFactory.newXMLGregorianCalendar("2000-03-04T20:00:00Z")
-            _getReport_messagePart.reportDefinition.filters.usageDateRange.end = datatypeFactory.newXMLGregorianCalendar("2000-03-04T20:00:00Z")
+            _getReport_messagePart.reportDefinition.filters.usageDateRange.begin = datatypeFactory.newXMLGregorianCalendar("2016-01-01T00:00:00Z")
+            _getReport_messagePart.reportDefinition.filters.usageDateRange.end = datatypeFactory.newXMLGregorianCalendar("2016-02-01T00:00:00Z")
             _getReport_messagePart.reportDefinition.filters.filter = []
-            _getReport_messagePart.reportDefinition.filters.reportAttribute = []
+            _getReport_messagePart.reportDefinition.filters.reportAttribute = new ArrayList<ReportAttribute>()
+            _getReport_messagePart.reportDefinition.name="JR1a"
+            _getReport_messagePart.reportDefinition.release="1"
             _getReport_messagePart.created = datatypeFactory.newXMLGregorianCalendar("2000-03-04T20:00:00Z")
             _getReport_messagePart.id = "ReportRequestId0000001"
         then:"Call Counter getReport"
