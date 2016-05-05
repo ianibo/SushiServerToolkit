@@ -19,8 +19,10 @@ environments:
             dbCreate: create-drop
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
         grails:
-            es_local_only: true
-            es_cluster_name: 'IntegrationTestES'
+            es_local_only: false
+            transport_tcp_port: 9300
+            transport_tcp_host: 'localhost'
+            es_cluster_name: 'elasticsearch'
     test:
         dataSource:
             dbCreate: update
@@ -28,6 +30,8 @@ environments:
         grails:
             es_local_only: true
             es_cluster_name: 'IntegrationTestES'
+            transport_tcp_port: 9600
+            transport_tcp_host: 'localhost'
     production:
         dataSource:
             dbCreate: update
@@ -50,6 +54,11 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+        grails:
+            es_local_only: false
+            transport_tcp_port: 9600
+            transport_tcp_host: 'localhost'
+            es_cluster_name: 'elasticsearch'
 
 ---
 ---

@@ -9,10 +9,15 @@ import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.datatype.DatatypeFactory
 import com.k_int.sushiServerToolkit.counter.*
+import org.apache.commons.logging.LogFactory
+import groovy.util.logging.*
+
 
 /**
  * See http://www.gebish.org/manual/current/ for more instructions
  */
+@Log4j
+@Stepwise
 @Integration
 @Rollback
 class CounterSushiWSTestSpec extends GebSpec {
