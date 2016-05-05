@@ -1,6 +1,6 @@
 import grails.transaction.Transactional
 import org.elasticsearch.node.Node
-import static org.elasticsearch.node.NodeBuilder.nodeBuilder
+import org.elasticsearch.node.NodeBuilder
 import org.elasticsearch.client.transport.TransportClient
 import org.elasticsearch.common.settings.Settings
 import org.elasticsearch.groovy.*
@@ -29,6 +29,7 @@ class ESWrapperService {
 
     if ( grailsApplication.config.grails?.es_local_only ) {
 
+        // see http://www.programcreek.com/java-api-examples/index.php?api=org.elasticsearch.node.NodeBuilder
         log.debug("Configuring ES in local only mode");
 
         def es_working_dir='./es'
@@ -50,13 +51,13 @@ class ESWrapperService {
 
         log.debug("Make node");
 
-        def node = NodeBuilder
-                      .nodeBuilder()
+        def node = NodeBuilder.nodeBuilder()
                       .local(false)
                       .clusterName(es_cluster_name)
                       .settings(settings)
                       .node()
 
+        log.debug("Start node");
         // Start local ES server
         node.start();
     }
