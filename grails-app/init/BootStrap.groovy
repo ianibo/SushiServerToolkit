@@ -1,7 +1,11 @@
 class BootStrap {
 
-    def init = { servletContext ->
-    }
-    def destroy = {
-    }
+  def ESWrapperService
+
+  def init = { servletContext ->
+    log.debug("BootStrap::init");
+  }
+
+  def destroy = {
+  }
 }

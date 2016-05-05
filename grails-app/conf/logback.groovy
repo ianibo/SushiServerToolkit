@@ -14,7 +14,7 @@ appender("APPENDER", FileAppender) {
   file = "${targetDir}/debug.log"
   append = false
   encoder(PatternLayoutEncoder) {
-    pattern = "%level - %msg%n"
+    pattern = "%d %level %logger - %msg%n"
   }
 }
 
