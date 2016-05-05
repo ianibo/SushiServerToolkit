@@ -8,7 +8,7 @@ import geb.spock.*
 import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.datatype.DatatypeFactory
-import com.k_int.sushiServerToolkit.vanilla.*
+import com.k_int.sushiServerToolkit.counter.*
 
 /**
  * See http://www.gebish.org/manual/current/ for more instructions
@@ -31,7 +31,6 @@ class CounterSushiWSTestSpec extends GebSpec {
 
       datatypeFactory = DatatypeFactory.newInstance()
 
-      // ss = new SushiService('http://localhost:8080/services/vanillaSushi', 'SushiService');
       QName SERVICE_NAME = new QName("SushiService", "SushiServiceService");
       ss = new SushiService(new URL('http://localhost:8080/services/sushi?wsdl'),SERVICE_NAME);
       port = ss.getSushiServicePort();
@@ -46,7 +45,7 @@ class CounterSushiWSTestSpec extends GebSpec {
     // JXB stubs to call the web service.
     void "Call getReport WS"() {
         when:"We get hold of the Sushi port"
-            com.k_int.sushiServerToolkit.vanilla.ReportRequest _getReport_messagePart = new com.k_int.sushiServerToolkit.vanilla.ReportRequest();
+            com.k_int.sushiServerToolkit.counter.ReportRequest _getReport_messagePart = new com.k_int.sushiServerToolkit.counter.ReportRequest();
             _getReport_messagePart.requestor = new Requestor()
             _getReport_messagePart.requestor.id = "0001"
             _getReport_messagePart.requestor.name = "User 0001"
@@ -63,7 +62,7 @@ class CounterSushiWSTestSpec extends GebSpec {
             _getReport_messagePart.created = datatypeFactory.newXMLGregorianCalendar("2000-03-04T20:00:00Z")
             _getReport_messagePart.id = "ReportRequestId0000001"
         then:"Call Counter getReport"
-            com.k_int.sushiServerToolkit.vanilla.ReportResponse _getReport__return = port.getReport(_getReport_messagePart);
+            com.k_int.sushiServerToolkit.counter.CounterReportResponse _getReport__return = port.getReport(_getReport_messagePart);
         expect:"All OK"
             true == true
     }
