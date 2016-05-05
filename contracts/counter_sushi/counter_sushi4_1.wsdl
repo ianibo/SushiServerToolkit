@@ -6,6 +6,7 @@
              name="SushiService"
              targetNamespace="SushiService"
              xmlns="http://schemas.xmlsoap.org/wsdl/">
+
    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"/>
    
    <types>

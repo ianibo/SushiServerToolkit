@@ -10,7 +10,7 @@ import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
 @GrailsCxfEndpoint
-@WebService(targetNamespace = "SushiService", name = "SushiServiceInterface")
+@WebService(targetNamespace = "SushiService", name = "SushiServiceInterface", portName="SushiServicePort" )
 @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
 class SushiService implements com.k_int.sushiServerToolkit.counter.SushiServiceInterface {
 
