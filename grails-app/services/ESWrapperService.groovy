@@ -36,11 +36,11 @@ class ESWrapperService {
         removeOldDataDir(es_working_dir + "/" + es_cluster_name);
 
         Settings settings = Settings.settingsBuilder()
-                .put("path.home", ES_WORKING_DIR)
-                .put("path.conf", ES_WORKING_DIR)
-                .put("path.data", ES_WORKING_DIR)
-                .put("path.work", ES_WORKING_DIR)
-                .put("path.logs", ES_WORKING_DIR)
+                .put("path.home", es_working_dir)
+                .put("path.conf", es_working_dir)
+                .put("path.data", es_working_dir)
+                .put("path.work", es_working_dir)
+                .put("path.logs", es_working_dir)
                 .put("http.port", 9500)
                 .put("transport.tcp.port", 9600)
                 .put("index.number_of_shards", "1")
@@ -48,8 +48,16 @@ class ESWrapperService {
                 .put("discovery.zen.ping.multicast.enabled", "false")
                 .build();
 
-        log.debug("Make node using ${settings}");
-        node = nodeBuilder().settings(settings).clusterName(es_cluster_name).client(false).node();
+        log.debug("Make node");
+
+        def node = NodeBuilder
+                      .nodeBuilder()
+                      .local(false)
+                      .clusterName(es_cluster_name)
+                      .settings(settings)
+                      .node()
+
+        // Start local ES server
         node.start();
     }
     else {
